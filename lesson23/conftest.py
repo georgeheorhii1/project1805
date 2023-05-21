@@ -6,15 +6,16 @@ import pytest
 @pytest.fixture(scope="session")
 def driver():
     driver = Chrome('lesson23/drivers/chromedriver.exe')
-
     driver.get("https://epicentrk.ua/")
-    driver.set_window_size(100, 100)
-    # for cookie in driver.get_cookies():
-    #    print(cookie)
-    # print(driver.get_cookie('EPIC_LANG'))
+    print(driver.get_cookies())
+
+#    driver.set_window_size(100, 100)
+#    for cookie in driver.get_cookies():
+#        print(cookie)
+#    print(driver.get_cookie('EPIC_LANG'))
     token_xsrf = 'XSRF-TOKEN'
-    driver.add_cookie({'name': 'test', 'value': 'test_value'})
-    driver.get_cookie('test')
+#    driver.add_cookie({'name': 'test', 'value': 'test_value'})
+#    driver.get_cookie('test')
 
     yield driver
 
